@@ -2,7 +2,7 @@ MyMovie.Views.EditMovie = Backbone.View.extend({
 
 	template : JST['movies/edit_movie'],
 
-	el : 'div',
+	el : '#movies',
 
 	events : {
 		"click .edit" : "edit"
@@ -35,7 +35,7 @@ MyMovie.Views.EditMovie = Backbone.View.extend({
 			type : 'PUT',
 
 			data : {
-				access_token : '04504e105284569ea74030908d006252'
+				access_token : access_token
 			},
 
 			beforeSubmit : function(arr, $form, options) {

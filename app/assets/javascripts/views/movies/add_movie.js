@@ -2,7 +2,7 @@ MyMovie.Views.AddMovie = Backbone.View.extend({
 
 	template : JST['movies/add_movie'],
 
-	el : 'div',
+	el : '#movies',
 
 	events : {
 		"click .add" : "add"
@@ -20,7 +20,7 @@ MyMovie.Views.AddMovie = Backbone.View.extend({
 			type : 'POST',
 
 			data : {
-				access_token : '04504e105284569ea74030908d006252'
+				access_token : access_token
 			},
 
 			success : function() {

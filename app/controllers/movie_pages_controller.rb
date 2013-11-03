@@ -8,11 +8,11 @@ class MoviePagesController < ApplicationController
   def init
     @client =  OAuth2::Client.new('466e0fff918b758022b310ff5e66bfc7',
                                   '3a54bfb987d6d37d1743c4e0160507de',
-                                  :site => 'https://cs3213.herokuapp.com/',
+                                  :site => 'http://cs3213.herokuapp.com/',
                                   :authorize_url => '/oauth/new',
                                   :token_url => '/oauth/token.json')
-    @redirect_url = "http://localhost:3000/"
-    @target_url = "https://cs3213.herokuapp.com"
+    @redirect_url = "http://localhost:3000/movie_pages/callback"
+    @target_url = "http://cs3213.herokuapp.com"
   end
 
   def callback
@@ -47,8 +47,10 @@ class MoviePagesController < ApplicationController
   def hasCode?
     params[:code]
   end
-
+  
   def hasAccess?
     session[:access_token]
   end
+  
+  helper_method :hasAccess?
 end

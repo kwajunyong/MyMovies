@@ -2,8 +2,8 @@ MyMovie.Views.MovieList = Backbone.View.extend({
 
 	template : JST['movies/movie_list'],
 
-	el : 'div',
-
+	el : '#movies',
+	
 	render : function() {
 		var that = this;
 

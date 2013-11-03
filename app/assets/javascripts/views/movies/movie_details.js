@@ -2,7 +2,7 @@ MyMovie.Views.MovieDetails = Backbone.View.extend({
 
 	template : JST['movies/movie_details'],
 
-	el : 'div',
+	el : '#movies',
 
 	events : {
 		"click .edit" : "edit",
@@ -43,7 +43,7 @@ MyMovie.Views.MovieDetails = Backbone.View.extend({
 				type : 'DELETE',
 
 				data : {
-					access_token : '04504e105284569ea74030908d006252'
+					access_token : access_token
 				},
 
 				success : function() {

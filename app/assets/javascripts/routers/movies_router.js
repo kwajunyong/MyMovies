@@ -1,6 +1,7 @@
 MyMovie.Routers.MovieRouter = Backbone.Router.extend({
 	initialize : function() {
 		this.movieList = new MyMovie.Views.MovieList();
+		this.userInfo = new MyMovie.Views.UserInfo();
 		this.movieDetails = new MyMovie.Views.MovieDetails();
 		this.addMovie = new MyMovie.Views.AddMovie();
 		this.editMovie = new MyMovie.Views.EditMovie();
@@ -15,6 +16,10 @@ MyMovie.Routers.MovieRouter = Backbone.Router.extend({
 	},
 
 	movies : function() {
+		if (access_token) {
+			this.userInfo.render();
+		}
+		
 		this.movieList.render();
 	},
 

@@ -1,5 +1,15 @@
 <h1>My movies</h1>
 <p>
+	<% if hasAccess? %>
+	<%= link_to "Logout", :controller => "movie_pages", :action => "userLogout" %>
+	<% else %>
 	<%= link_to "Login", :controller => "movie_pages", :action => "userLogin" %>
+	<% end %>
+	
+	<%= javascript_tag do %>
+	  var access_token = "<%= session[:access_token] %>";
+	<% end %>
+	
+	<div id="user"></div>
 </p>
-<div></div>
+<div id="movies"></div>
