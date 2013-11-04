@@ -3,6 +3,8 @@ MyMovie.Routers.MovieRouter = Backbone.Router.extend({
 		this.movieList = new MyMovie.Views.MovieList();
 		this.userInfo = new MyMovie.Views.UserInfo();
 		this.movieDetails = new MyMovie.Views.MovieDetails();
+		this.movieReviews = new MyMovie.Views.MovieReviews();
+		this.addReview = new MyMovie.Views.AddReview();
 		this.addMovie = new MyMovie.Views.AddMovie();
 		this.editMovie = new MyMovie.Views.EditMovie();
 	},
@@ -25,6 +27,14 @@ MyMovie.Routers.MovieRouter = Backbone.Router.extend({
 
 	movie : function(id) {
 		this.movieDetails.render({
+			id : id
+		});
+		
+		this.movieReviews.render({
+			id : id
+		});
+		
+		this.addReview.render({
 			id : id
 		});
 	},
