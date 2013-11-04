@@ -1,0 +1,7 @@
+<div>
+	<a href="#/new">Add movie</a>
+	<% _.each(movies, function(movie) { %>
+		<h3><a href="#/movies/<%= movie.get('id') %>"><%= movie.get('title') %></a><h3>
+		<a href="#/movies/<%= movie.get('id') %>"><img src="<%= movie.get('img_url') %>" alt="<%= movie.get('title') %>"/></a>
+	<% }); %>
+</div>

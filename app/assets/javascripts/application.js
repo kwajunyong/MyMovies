@@ -1,0 +1,10 @@
+//= require jquery
+//= require jquery.form.min
+//= require underscore
+//= require backbone
+//= require my_movie
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./routers
